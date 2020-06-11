@@ -1,0 +1,65 @@
+body{
+	background:#8AE691;
+    padding:50px 0px 0px 0px;
+  
+}
+.navbar-dark {
+     background-color: #d60062;
+}
+.footer{
+    background-color: #d60062;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+img{
+	max-width: 100%;
+}
+.producto{
+		display:inline-table;
+		width:25%;
+		float: center;
+		padding:10px;
+		background: rgba(0,0,0,0.05);
+		color:#333;
+		margin-left:65px;
+		margin-right: 0px;
+		border: 1px solid black;
+		font-family: sans-serif;
+		margin-bottom: 80px;
+		
+
+}
+
+.img_producto{
+		text-align: center;
+		width:332px;
+		height:322px;
+}
+
+.name_producto{
+		padding:10px;
+		color:white;
+		background: #d60062!important;
+		text-align: center;
+		font-size:18px;
+}
+
+.precio{
+		color:#00aa00;
+		padding:20px;
+}
+.titulo{
+   margin-top: 50px;
+   font-size: 45px;
+   font-family: 'Optima';
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
+.cat{
+   margin-top: -15px;
+   font-size: 35px;
+   font-family: 'Optima';
+   margin-left: 0px;
+}
+
