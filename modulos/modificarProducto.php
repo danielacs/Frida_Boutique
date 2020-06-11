@@ -35,7 +35,7 @@ include "../configs/funciones.php";
   <?php
 check_admin();
 
-  $id = clear($id);
+$id = clear($id);
 
  $q = $conexion->query("SELECT * FROM productos WHERE id = '$id'");
   $rq = mysqli_fetch_array($q);
@@ -52,6 +52,7 @@ if(isset($enviar)){
 
   $conexion->query("UPDATE productos SET nombre = '$name',precio = '$price',talla = '$talla',
     oferta = '$oferta', id_categoria = '$categoria' WHERE id = '$idpro'");
+  echo '<script language="javascript">alert("Producto modificado correctamente");</script>';
   redir("./registroProductos.php");
 
 }

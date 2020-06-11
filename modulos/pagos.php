@@ -28,7 +28,7 @@ include "../configs/funciones.php";
             <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item active"><a class="nav-link" href="./salirAdmin.php"> Salir  </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./adminlogin.php"> Regresar  </a></li>
                 </ul>       
             </div> 
         </div>
@@ -42,7 +42,7 @@ if(isset($aceptar)){
   $id_compra = clear($id_compra);
   $conexion->query("UPDATE compra SET estado = 1 WHERE id = '$id_compra'");
   echo '<script language="javascript">alert("Pago verificado correctamente");</script>';
-  redir("?p=ver_compra&id=".$id_compra);
+  redir("./vercompra.php?id=".$id_compra);
 }
 
 //Estados:
@@ -71,14 +71,14 @@ if(isset($aceptar)){
                         <tr>
                           <td><?=nombre_cliente($r['id_cliente'])?></td>
                           <td><?=fecha($r['fecha'])?></td>
-                          <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?=$r['comprobante']?>">Ver Comprobante</a></td>
+                          <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?php echo $r['comprobante']?>">Ver Comprobante</a></td>
                           <td><?=$r['nombre']?></td>
                           <td><?=estado_pago($r['estado'])?></td>
                           <td>
                             <?php
                             if($r['estado']==0){
                               ?>
-                                <a style="color:#3f88d4" href="./pagos.php&aceptar=<?php echo $r['id'];?>&id_compra=<?php echo $r['id_compra'];?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
+                                <a style="color:#3f88d4" href="./pagos.php?aceptar=<?php echo $r['id'];?>?id_compra=<?php echo $r['id_compra'];?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
                               <?php
                             }
                             ?>
@@ -111,14 +111,14 @@ if(isset($aceptar)){
     <tr>
       <td><?=nombre_cliente($r['id_cliente'])?></td>
       <td><?=fecha($r['fecha'])?></td>
-      <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?=$r['comprobante']?>">Ver Comprobante</a></td>
+      <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?php echo $r['comprobante']?>">Ver Comprobante</a></td>
       <td><?=$r['nombre']?></td>
       <td><?=estado_pago($r['estado'])?></td>
       <td>
         <?php
         if($r['estado']==0){
           ?>
-            <a style="color:#333" href="./pagos.php&aceptar=<?=$r['id']?>"><img src="../icono/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
+            <a style="color:#333" href="./pagos.php?aceptar=<?php echo $r['id']?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
           <?php
         }
         ?>

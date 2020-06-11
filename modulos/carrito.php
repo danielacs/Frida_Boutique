@@ -8,6 +8,7 @@ check_user('carrito');
 if(isset($eliminar)){
    $eliminar = clear($eliminar);
    $conexion->query("DELETE FROM carro WHERE id = '$eliminar'");
+  
    redir("carrito.php");
 }
 
@@ -77,19 +78,18 @@ if(isset($finalizar)){
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
+            <a class="navbar-brand mr-auto" href="./indexUser.php"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html"> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./indexUser.php"> Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="./productos.php"> Productos</a></li>
                     <li class="nav-item active"><a class="nav-link" href="#"> Carrito</a></li>
                     <li class="nav-item"><a class="nav-link" href="./miscompras.php"> Mis Compras</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./adminlogin.php"> Administrador</a></li>
                 </ul>        
+                      
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a class="nav-link" href="./registro.php"> Registrarse  </a></li>
-                    <li class="nav-item"><a class="nav-link" href="./login.php"> Iniciar Sesion </a></li>
-                </ul>       
+                    <li class="nav-item"><a class="nav-link" href="./salirUser.php"> Cerrar Sesion </a></li>
+                </ul>        
             </div> 
         </div>
     </nav>
@@ -163,7 +163,7 @@ while($r = mysqli_fetch_array($q)){
          <td><?=$divisa?><?=$preciototal?> </td>
          <td><?=$divisa?><?=$precio_total?> </td>
          <td>
-            <a onclick="modificar('<?php echo $r['id']?>')" href="#"><img src="../iconos/editar.png" width="35" height="35" title="Modificar cantidad en carrito"></i></a>
+            <a onclick="modificar('<?= $r['id']?>')" href="#"><img src="../iconos/editar.png" width="35" height="35" title="Modificar cantidad en carrito"></i></a>
             <a href="?eliminar=<?php echo $r['id']?>"><img src="../iconos/eliminar.png" width="35" height="35" title="Eliminar" ></i></a>
          </td>
       </tr>
@@ -196,7 +196,7 @@ while($r = mysqli_fetch_array($q)){
 
         if(new_cant>0){
 
-            window.location="./carrito.php&id="+idc+"&modificar="+new_cant;
+            window.location="?&id="+idc+"&modificar="+new_cant;
 
         }
 

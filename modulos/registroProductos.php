@@ -26,44 +26,15 @@ include "../configs/funciones.php";
             <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item active"><a class="nav-link" href="./salirAdmin.php"> Salir  </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./adminlogin.php"> Regresar  </a></li>
                 </ul>       
             </div> 
         </div>
     </nav><br><br><br><br>
 
-   <?php
-
-
-check_admin();
-
-if(isset($enviar)){
-  $nom = clear($name);
-  $prec = clear($price);
-  $talla = clear($talla);
-  $oferta = clear($oferta);
-  $imagen = "";
-
-if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
-    $imagen = $nom.rand(0,1000).".png";
-  move_uploaded_file($_FILES['imagen']['tmp_name'], "../productos/".$imagen);
-  }
-
-  $conexion->query("INSERT INTO productos (nombre,precio,imagen,talla,oferta,id_categoria) VALUES ('$nom','$prec','$imagen','$talla','$oferta','$categoria')");
-  echo '<script language="javascript">alert("Producto agregado correctamente");</script>';
-  redir("./registroProductos.php");
-}
-
-if(isset($eliminar)){
-  $conexion->query("DELETE FROM productos WHERE id = '$eliminar'");
-  echo '<script language="javascript">alert("Producto eliminado correctamente");</script>';
-  redir("./registroProductos.php");
-}
-?>
-
 <center><h1 class="titulo">AGREGAR PRODUCTO</h1></center>
 
-<form id="product" method="post" action="">
+<form id="product" method="post" action="./insertProductos.php">
   <div class=" row text-center login-page ">
     <div class="col-md-12 login-form">
       <div class="row">
@@ -208,16 +179,18 @@ if(isset($eliminar)){
           <td><?=$categoria?></td>
           <td>
             
-            <a href="./modificarProducto.php/id=<?php echo $rp['id']?>"><img src="../iconos/editar.png" width="35" height="35" title="Modificar producto" ></a>
+            <a href="./modificarProducto.php?id=<?php echo $rp['id']?>"><img src="../iconos/editar.png" width="35" height="35" title="Modificar producto" ></a>
             &nbsp;
       
-            <a href="?eliminar=<?php echo $rp['id']?>"><img src="../iconos/eliminar.png" width="30" height="35" title="Eliminar" ></a>
+            <a href="./insertProductos.php?eliminar=<?php echo $rp['id']?>"><img src="../iconos/eliminar.png" width="30" height="35" title="Eliminar" ></a>
 
           </td>
         </tr>
       <?php
     }
   ?>
+
+  
 
 </table>
 </div>

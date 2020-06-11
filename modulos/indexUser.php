@@ -19,14 +19,14 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
+            <a class="navbar-brand mr-auto" href="#"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="../index.html"> Inicio</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"> Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="./productos.php"> Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="./carrito.php"> Carrito</a></li>
                     <li class="nav-item"><a class="nav-link" href="./miscompras.php"> Mis Compras</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./adminlogin.php"> Administrador</a></li>
+                   
                 </ul>        
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item"><a class="nav-link" href="./salirUser.php"> Cerrar Sesion </a></li>
