@@ -53,7 +53,7 @@ include "../configs/funciones.php";
       <div class="row">
         <div class="col-md-12 login-form-row">          
 
-          <label class="ima">Imagen del producto</label><br>
+          <!--<label class="ima">Imagen del producto</label><br>--><br>
           <input type="file" class="btn1" name="imagen" title="Imagen del producto" placeholder="Imagen del producto">
 
           <select name="categoria" required class="btn">

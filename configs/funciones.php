@@ -93,22 +93,6 @@ function fecha($fecha){
 
 }
 
-function estado($id_estado){
-		if($id_estado == 0){
-			$status = "Iniciando";
-		}elseif($id_estado==1){
-			$status = "Preparando";
-		}elseif($id_estado == 2){
-			$status = "Despachando";
-		}elseif($id_estado == 3){
-			$status = "Finalizado";
-		}else{
-			$status = "Indefinido";
-		}
-
-		return $status;
-
-}
 
 function admin_name_connected(){
 	include "configs.php";
@@ -122,19 +106,5 @@ function admin_name_connected(){
 
 }
 
-function estado_pago($estado){
 
-	if($estado==0){
-		$estado = "Sin Verificar";
-	}elseif($estado==1){
-		$estado = "Verificado y Aprobado";
-	}elseif($estado==2){
-		$estado = "Reembolsado";
-	}else{
-		$estado = "Sin Verificar";
-	}
-
-	return $estado;
-
-}
 ?>

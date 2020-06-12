@@ -41,7 +41,7 @@ include "../configs/funciones.php";
     <?php
         check_user('miscompras');
         $s = $conexion->query("SELECT * FROM compra WHERE id_cliente = '".$_SESSION['id_cliente']."' ORDER BY fecha DESC");
-        if(mysqli_num_rows($s)>0){
+     
     ?>
     <div class="contenedor1">
         <div class="table-responsive">
@@ -49,7 +49,6 @@ include "../configs/funciones.php";
                 <tr class="table-secondary">
                     <th>Fecha</th>
                     <th>Monto</th>
-                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
 
@@ -59,18 +58,11 @@ include "../configs/funciones.php";
                 <tr>
                     <td><?=fecha($r['fecha'])?></td>
                     <td><?=$divisa?><?=number_format($r['monto'])?> </td>
-                    <td><?=estado($r['estado'])?></td>
+                    
                     <td>
                         <a href="./verCompra.php?id=<?php echo $r['id']?>">
                         <img src="../iconos/ver1.png" width="35" height="20" title="Ver compra" ></a>
 
-                    <?php
-                        if(estado($r['estado']) == "Iniciando"){
-                    ?>
-                        &nbsp; &nbsp;<a title="Pagar" href="./pagarCompra.php?id=<?php echo $r['id']?>"><b>Pagar</b></a>
-                    <?php
-                        }
-                    ?>
                     </td>
                 </tr>
                 <?php
@@ -79,13 +71,7 @@ include "../configs/funciones.php";
             </table>
         </div>
     </div>
-    <?php
-        }else{
-    ?>
-        <center><i>No ha realizado ninguna compra</i></center>
-    <?php
-        }
-    ?>
+ 
    
 <br><br><br>
     <footer class="footer">

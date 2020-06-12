@@ -22,11 +22,11 @@ if(isset($id) && isset($modificar)){
 }
 
 if(isset($finalizar)){
-
+  $id_cliente = clear($_SESSION['id_cliente']);
    $monto = clear($monto_total);
 
-   $id_cliente = clear($_SESSION['id_cliente']);
-   $q = $conexion->query("INSERT INTO compra (id_cliente,fecha,monto,estado) VALUES ('$id_cliente',NOW(),'$monto',0)");
+ 
+   $q = $conexion->query("INSERT INTO compra (id_cliente,fecha,monto) VALUES ('$id_cliente',NOW(),'$monto')");
 
    $sc = $conexion->query("SELECT * FROM compra WHERE id_cliente = '$id_cliente' ORDER BY id DESC LIMIT 1");
    $rc = mysqli_fetch_array($sc);
@@ -182,7 +182,7 @@ while($r = mysqli_fetch_array($q)){
 <form method="post" action="">
    <input type="hidden" name="monto_total" value="<?=$monto_total?> "/>
    <button href="./miscompras.php" class="btn" type="submit" name="finalizar" >Finalizar Compra</button>
-   <a class="btn1" type="submit" name="finalizar" href="./miscompras">Mis Compras</a>
+   <a class="btn1" type="submit" name="finalizar" href="./miscompras.php">Mis Compras</a>
 </form>
 </div>
 

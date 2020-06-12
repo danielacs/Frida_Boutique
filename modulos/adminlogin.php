@@ -66,7 +66,7 @@ if(isset($_SESSION['id'])){ // si hay una sesion iniciada
 
       <!--<a href="?p=manejar_tracking" class="btn">Manejar Tracking</a>-->
 
-      <a class="btn" href="./pagos.php" >Pagos/Reporte</a>
+      <a class="btn" href="./pagos.php" >Reporte Compras</a>
    <?php
 }else{ // si no hay una sesion iniciada
    ?>

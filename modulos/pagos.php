@@ -3,19 +3,17 @@ include "../configs/configs.php";
 include "../configs/funciones.php";
 
 check_admin();
-$id_compra = clear($id_compra);
-if(isset($aceptar)){
+//$id_compra = clear($id_compra);
 
-  $conexion->query("UPDATE pagos SET estado = 1 WHERE id = '$aceptar'");
+//if (isset($id_compra)!= "" || isset($aceptar)) {
+
+
+  //$conexion->query("UPDATE pagos SET estado = 1 WHERE id = '$aceptar'");
 
   
-  $conexion->query("UPDATE compra SET estado = 1 WHERE id = '$id_compra'");
-  echo '<script language="javascript">alert("Pago verificado correctamente");</script>';
-  redir("./verCompra.php?&id=".$id_compra);
-
-}
-
-?>
+ // $conexion->query("UPDATE compra SET estado = 1 WHERE id = '$id_compra'");
+  //echo '<script language="javascript">alert("Pago verificado correctamente");</script>';
+  //redir("./verCompra.php?&id=".$id_compra);}<!--?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,46 +44,7 @@ if(isset($aceptar)){
     </nav><br><br><br><br>
 
 
-          <div class="contenedor1">
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                <tr class="table-secondary">
-                  <th>Cliente</th>
-                    <th>Fecha</th>
-                    <th>Comprobante</th>
-                    <th>Nombre de comprobante</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-                    <?php
-                      $s = $conexion->query("SELECT * FROM pagos WHERE estado = 0 ORDER BY fecha DESC");
-                      while($r=mysqli_fetch_array($s)){
-                        ?>
-
-                        <tr>
-                          <td><?=nombre_cliente($r['id_cliente'])?></td>
-                          <td><?=fecha($r['fecha'])?></td>
-                          <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?php echo $r['comprobante']?>">Ver Comprobante</a></td>
-                          <td><?=$r['nombre']?></td>
-                          <td><?=estado_pago($r['estado'])?></td>
-                          <td>
-                            <?php
-                            if($r['estado']==0){
-                              ?>
-                                <a style="color:#3f88d4" href="./pagos.php?&aceptar=<?php echo $r['id'];?>?id_compra=<?php echo $r['id_compra'];?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
-                              <?php
-                            }
-                            ?>
-                          </td>
-                        </tr>
-                        <?php
-                      }
-                      ?>
-              </table>
-            </div>
-          </div>
-
-          <h1 class="titulo2">Pagos Realizados</h1>
+          <center><h1 class="titulo2">Reporte de Compras</h1></center><br><br>
 
 <div class="contenedor1">
             <div class="table-responsive">
@@ -93,37 +52,24 @@ if(isset($aceptar)){
                 <tr class="table-secondary">
         <th>Cliente</th>
         <th>Fecha</th>
-        <th>Comprobante</th>
-        <th>Nombre de comprobante</th>
-        <th>Estado</th>
+        <th>Monto</th>
       </tr>
 
   <?php
-  $s = $conexion->query("SELECT * FROM pagos WHERE estado > 0 ORDER BY fecha DESC");
+  $s = $conexion->query("SELECT * FROM compra  ORDER BY fecha DESC");
   while($r=mysqli_fetch_array($s)){
     ?>
     <tr>
       <td><?=nombre_cliente($r['id_cliente'])?></td>
       <td><?=fecha($r['fecha'])?></td>
-      <td><a style="color:#3f88d4" target="_blank" href="../comprob/<?php echo $r['comprobante']?>">Ver Comprobante</a></td>
-      <td><?=$r['nombre']?></td>
-      <td><?=estado_pago($r['estado'])?></td>
-      <td>
-        <?php
-        if($r['estado']==0){
-          ?>
-            <a style="color:#333" href="./pagos.php?aceptar=<?php echo $r['id']?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
-          <?php
-        }
-        ?>
-      </td>
+      <td><?=$divisa?><?=number_format($r['monto'])?></td>
     </tr>
     <?php
   }
   ?>
 </table>
 </div>
-</div>
+</div><br><br><br><br><br><br><br><br>
 
     <footer class="footer">
         <div class="container">

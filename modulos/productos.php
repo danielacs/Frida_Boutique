@@ -167,8 +167,8 @@ while($r=mysqli_fetch_array($q)){
                     <ul class="list-unstyled">
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="#">Productos</a></li>
-                        <li><a href="modulos/carrito.php">Carrito</a></li>
-                        <li><a href="modulos/miscompras.php">Mis Compras</a></li>
+                        <li><a href="./carrito.php">Carrito</a></li>
+                        <li><a href="./miscompras.php">Mis Compras</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-4 align-center">

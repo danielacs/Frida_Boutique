@@ -18,8 +18,8 @@ $w = 10 * $M + $L * imagefontwidth ( 10 );
 $h = 5* $M +      imagefontheight( 6 );
 // Creamos una  imagen:
 $i = imagecreatetruecolor( $w, $h );
-// La rellenamos de blanco:
-imagefill( $i, 0, 0, imagecolorallocate( $i, 255, 255, 255 ) );
+// La rellenamos de blanco: 107, 191, 114/ 214, 0, 98
+imagefill( $i, 0, 0, imagecolorallocate( $i, 107, 191, 114 ) );
 // Elegimos aleatoriamente un ángulo para que se vean lineas bosorras :
 $A = ( rand() % 200 ) / 4.14;
 // esto es para crear las línas y que se vean como borrones:
