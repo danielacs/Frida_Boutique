@@ -14,9 +14,6 @@ include "../configs/funciones.php";
 
 	<title>Productos</title>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -80,11 +77,11 @@ include "../configs/funciones.php";
 			$q = $conexion->query("SELECT * FROM productos ORDER BY id DESC");
 		}
 	?>
-
+		<h1 class="titulo">PRODUCTOS</h1>
 	<form method="post" action="">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-				<h1 class="titulo">PRODUCTOS</h1>
+		
 					<style> h1{text-align: center;}</style>
 					<br>
 				<select id="categoria" name="cat" class="btn2">
@@ -195,22 +192,32 @@ while($r=mysqli_fetch_array($q)){
 </body>
 </html>
 <style type="text/css">
+	.navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
 	.card{
 		display:inline-table;
 		width:25%;
 		margin-left:65px;
 		margin-right: 0px;
-		border: 1px solid black;
+		border: 1px solid #8AE691!important;
 		font-family: sans-serif;
 		margin-bottom: 80px;
+		
 		
 
 }
 
 .card-img-top{
 		text-align: center;
-		width:332px;
-		height:322px;
+		width:300px;
+		height:300px;
 }
 
 .card-tittle{
@@ -225,40 +232,35 @@ while($r=mysqli_fetch_array($q)){
 		color:#00aa00;
 		padding:20px;
 }
-.titulo{
-   margin-top: 50px;
-   font-size: 45px;
+h4{
+   font-size: 17px;
    font-family: 'Optima';
-   margin-left: auto;
-   margin-right: auto;
+   text-align: center;
+}
+h1{
+   font-size: 50px;
+   font-family: 'Optima';
    text-align: center;
 }
 .cat{
-   margin-top: -15px;
-   font-size: 35px;
+   margin-top: -50px;
+   font-size: 18px;
    font-family: 'Optima';
    margin-left: 0px;
 }
 .btn1{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 3px;
-
    color: white;
    display: block;
-
    margin-bottom: 15px;
    margin-left: 30px;
-
    margin-right: 30px;
-
-
    margin-top: 6px;
-  
    text-align: center;
-
    width: 100px;
 }
 
@@ -297,7 +299,7 @@ while($r=mysqli_fetch_array($q)){
 	}
 .btn2{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -306,9 +308,9 @@ while($r=mysqli_fetch_array($q)){
    display: block;
 
    margin-bottom: 15px;
-   margin-left: 50px;
+   margin-left: 30px;
 
-   margin-right: 40px;
+   margin-right: 30px;
 
 
    margin-top: 3px;

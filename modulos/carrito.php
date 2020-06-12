@@ -1,4 +1,4 @@
-<?php
+  <?php
 include "../configs/configs.php";
 include "../configs/funciones.php";
 ?>
@@ -68,9 +68,6 @@ if(isset($finalizar)){
 
     <title>Productos</title>
 </head>
-    <style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -237,14 +234,29 @@ while($r = mysqli_fetch_array($q)){
 </body>
 </html>
 <style type="text/css">
+  .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
   .imagen_carro{
   width:50px;
   height:50px;
   border-radius: 1000px;
 }
+.table th{
+  border: 1px solid #000;
+}
+.table td{
+  border: 1px solid #000 ;
+}
 .btn{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -273,7 +285,7 @@ while($r = mysqli_fetch_array($q)){
  .btn1{
   font-family: 'Optima';
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;

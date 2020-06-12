@@ -23,9 +23,6 @@ include "../configs/funciones.php";
     }
   </script>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -33,14 +30,14 @@ include "../configs/funciones.php";
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
+            <a class="navbar-brand mr-auto" ><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item active"><a class="nav-link" href="./salirAdmin.php"> Salir  </a></li>
                 </ul>       
             </div> 
         </div>
-    </nav><br><br><br><br>
+    </nav><br><br>
 
     <?php
    
@@ -63,8 +60,8 @@ if(isset($enviar)){
 }
 
 if(isset($_SESSION['id'])){ // si hay una sesion iniciada
-   ?>
-   <h1 class="titulo1">ADMINISTRADOR</h1>
+   ?><br><br>
+   <h1 class="titulo1">ADMINISTRADOR</h1><br><br>
       <a href="./registroProductos.php" class="btn">Agregar Productos</a>
 
       <!--<a href="?p=manejar_tracking" class="btn">Manejar Tracking</a>-->
@@ -78,6 +75,7 @@ if(isset($_SESSION['id'])){ // si hay una sesion iniciada
          <div class=" row text-center login-page ">
             <div class="col-sm-12 login-form">
                <label><h2 class="titulo2"> Acceso de Administrador</h2></label>
+
                <div class="row">
                   <div class="col-md-12 login-form-row">
                   <input type="text" class="form-control" placeholder="Usuario" name="username"/>
@@ -110,7 +108,7 @@ if(isset($_SESSION['id'])){ // si hay una sesion iniciada
    <?php
 }
 ?>
-
+<br><br><br><br><br><br>
     <footer class="footer">
         <div class="container">
            <div class="row justify-content-center">             
@@ -133,9 +131,18 @@ if(isset($_SESSION['id'])){ // si hay una sesion iniciada
       padding-top:20px;
       font-family: 'Optima';
    }
+   .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
 
 input[type="text"]{
-   border: none;
+   border: 1px solid black;
 
    border-radius: 6px;
 
@@ -158,7 +165,7 @@ input[type="text"]{
 
 input[type="password"] {
 
-   border: none;
+   border: 1px solid black;
 
    border-radius: 6px;
 
@@ -185,14 +192,12 @@ input[type="password"] {
 /* Botón */
 
  .btn{
-   font-size: 16px;
-   text-decoration: none;
-   list-style: none;
-   background: #d60062!important;
-   padding: 25px 50px;
+  text-decoration: none;
+   background: #6bbf72!important;
+   padding: 15px 10px;
    border: none;
    border-radius: 6px;
-   font-family: 'Optima';
+
    color: white;
    display: block;
 
@@ -210,9 +215,8 @@ input[type="password"] {
 
 .btn:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!important;
    color:white;
-   font-weight: bold;
  }
 .titulo1{
    margin-top: 30px;
@@ -234,7 +238,7 @@ input[type="password"] {
 
 .btn2{
    text-decoration: none;
-   background: #d60062!important;
+   background: #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -256,7 +260,7 @@ input[type="password"] {
 
 .btn2:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!!important;
    color:white;
  }
 </style>

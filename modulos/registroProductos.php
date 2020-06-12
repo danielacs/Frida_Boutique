@@ -13,9 +13,6 @@ include "../configs/funciones.php";
 
 	<title>Productos</title>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -34,7 +31,7 @@ include "../configs/funciones.php";
 
 <center><h1 class="titulo">AGREGAR PRODUCTO</h1></center>
 
-<form id="product" method="post" action="./insertProductos.php">
+<form id="product" method="post" action="./insertProductos.php" enctype=”multipart/form-data“>
   <div class=" row text-center login-page ">
     <div class="col-md-12 login-form">
       <div class="row">
@@ -214,6 +211,15 @@ include "../configs/funciones.php";
 
 
 <style>
+  .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
   .imagen_carro{
   width:50px;
   height:50px;
@@ -228,28 +234,11 @@ include "../configs/funciones.php";
   margin-right: auto;
   text-align: center;
 }
-.table-success {
-  width: px;
-  border: 1px solid black;
-  border-collapse: collapse;
-  font-family: 'Optima';
-  margin-left: 10px;
-}
 .table th{
-  font-size: 17px;
-  margin-top: 10px;
-  padding: 10px 10px;
-  border: 1px solid #E6E6E6;
-  margin-left: 10px;
-  background: #D5D5D5;
+  border: 1px solid #000;
 }
 .table td{
-  font-size: 15px;
-  text-align: center;
-  padding: 0px 0px;
-  border: 1px solid #E6E6E6 ;
-  margin-left: 10px;
-  background: white;
+  border: 1px solid #000 ;
 }
 .form-group1{
   float:left;
@@ -258,7 +247,7 @@ include "../configs/funciones.php";
 }
 .btn{
    text-decoration: none;
-   background: #d60062!important;
+   background: #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -280,13 +269,13 @@ include "../configs/funciones.php";
 
 .btn:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!important;
    color:white;
  }
 
  .btn1{
    text-decoration: none;
-   background:  #d60062!important;
+   background: #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -308,13 +297,13 @@ include "../configs/funciones.php";
 
 .btn1:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!important;
    color:white;
  }
 
  .btn2{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;

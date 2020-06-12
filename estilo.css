@@ -1,15 +1,16 @@
 body{
-	background:#8AE691;
+	background:#fff;
     padding:50px 0px 0px 0px;
   
 }
 .navbar-dark {
-     background-color: #d60062;
+     background-color: #000;
 }
 .footer{
-    background-color: #d60062;
+    background-color: #000;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
 }
 img{
 	max-width: 100%;

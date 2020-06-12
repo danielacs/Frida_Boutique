@@ -14,9 +14,6 @@ include "../configs/funciones.php";
 
    <title>Ver Compra</title>
 </head>
-   <style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -56,7 +53,7 @@ $rc = mysqli_fetch_array($sc);
 
 <p class="datos">
 Fecha: <?=fecha($r['fecha'])?><br>
-Monto: <?=number_format($r['monto'])?> <?=$divisa?><br>
+Monto: <?=$divisa?><?=number_format($r['monto'])?> <br>
 Estado: <?=estado($r['estado'])?><br>
 </p>
 <br>
@@ -93,15 +90,14 @@ Estado: <?=estado($r['estado'])?><br>
       </div>
       <br>
 <br>
-<?php
-if(estado($r['estado']) == "Iniciando"){
-  ?>
-  <a class="btn" href="./pagarCompra.php&id=<?php echo $r['id']?>">
+<!--<?php
+//if(estado($r['estado']) == "Iniciando"){
+//  ?>
+  <a class="btn" href="./pagarCompra.php?id=<?php echo $r['id']?>">
     Pagar
   </a>
   <?php
-}
-?>
+?>-->
 
 <?php
 
@@ -119,10 +115,10 @@ if(estado($r['estado']) == "Iniciando"){
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../indexUser.php">Inicio</a></li>
                         <li><a href="#">Productos</a></li>
-                        <li><a href="modulos/carrito.php">Carrito</a></li>
-                        <li><a href="modulos/miscompras.php">Mis Compras</a></li>
+                        <li><a href="./carrito.php">Carrito</a></li>
+                        <li><a href="./miscompras.php">Mis Compras</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-4 align-center">
@@ -145,3 +141,19 @@ if(estado($r['estado']) == "Iniciando"){
 
 </body>
 </html>
+<style type="text/css">
+  .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}.table th{
+  border: 1px solid #000;
+}
+.table td{
+  border: 1px solid #000 ;
+}
+</style>

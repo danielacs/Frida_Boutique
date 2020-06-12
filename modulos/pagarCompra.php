@@ -1,4 +1,8 @@
+<?php
 
+include "../configs/configs.php";
+include "../configs/funciones.php";
+?>
 
 
 <!DOCTYPE html>
@@ -11,9 +15,6 @@
 
 	<title>Pagar Compra</title>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -40,19 +41,19 @@
 	<br><br><br>
 
 	<?php
-include "../configs/configs.php";
-include "../configs/funciones.php";
+
 		check_user('pagarCompra');
 
 		if(isset($subir)){
 			$nombre = clear($nombre);
 
-			$comprobante = "";
+			$comprobante = addslashes(file_get_contents($_FILES['comprobante']['tmp_name']));
+      //$img_galletas = addslashes(file_get_contents($_FILES['img_galletas']['tmp_name']));
 
-			if(is_uploaded_file($_FILES['comprobante']['tmp_name'])){
-				$comprobante = date("His").rand(0,1000).".png";
-				move_uploaded_file($_FILES['comprobante']['tmp_name'], "../comprob/".$comprobante);
-			}
+		//if(is_uploaded_file($_FILES['comprobante']['tmp_name'])){
+	//			$comprobante = date("His").rand(0,1000).".png";
+//				move_uploaded_file($_FILES['comprobante']['tmp_name'], "../comprob/".$comprobante);
+			//}
 
 			$conexion->query("INSERT INTO pagos (id_cliente,id_compra,comprobante,nombre,fecha) VALUES ('".$_SESSION['id_cliente']."','$id','$comprobante','$nombre',NOW())");
 
@@ -129,9 +130,18 @@ include "../configs/funciones.php";
 </body>
 </html>
 <style type="text/css">
+  .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
 	.btn{
    text-decoration: none;
-   background: #d60062!important;
+   background:#6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -153,12 +163,12 @@ include "../configs/funciones.php";
 
 .btn:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!important;
    color:white;
  }
  .btn1{
    text-decoration: none;
-   background: #d60062!important;
+   background: #6bbf72!important;
    padding: 10px 10px;
    border: none;
    border-radius: 6px;
@@ -180,7 +190,7 @@ include "../configs/funciones.php";
 
 .btn1:hover{ 
    cursor: pointer;
-   background-color: #2854AA;
+   background-color: #d60062!important;
    color:white;
  }
  .ima{
@@ -191,4 +201,10 @@ include "../configs/funciones.php";
  	margin-top: 20px;
 
  }
+ .table th{
+  border: 1px solid #000;
+}
+.table td{
+  border: 1px solid #000 ;
+}
 </style>

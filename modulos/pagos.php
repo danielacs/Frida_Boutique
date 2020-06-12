@@ -1,6 +1,20 @@
 <?php
 include "../configs/configs.php";
 include "../configs/funciones.php";
+
+check_admin();
+$id_compra = clear($id_compra);
+if(isset($aceptar)){
+
+  $conexion->query("UPDATE pagos SET estado = 1 WHERE id = '$aceptar'");
+
+  
+  $conexion->query("UPDATE compra SET estado = 1 WHERE id = '$id_compra'");
+  echo '<script language="javascript">alert("Pago verificado correctamente");</script>';
+  redir("./verCompra.php?&id=".$id_compra);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +29,6 @@ include "../configs/funciones.php";
      <script>
   </script>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -34,23 +45,6 @@ include "../configs/funciones.php";
         </div>
     </nav><br><br><br><br>
 
-  <?php
-check_admin();
-
-if(isset($aceptar)){
-  $conexion->query("UPDATE pagos SET estado = 1 WHERE id = '$aceptar'");
-  $id_compra = clear($id_compra);
-  $conexion->query("UPDATE compra SET estado = 1 WHERE id = '$id_compra'");
-  echo '<script language="javascript">alert("Pago verificado correctamente");</script>';
-  redir("./vercompra.php?id=".$id_compra);
-}
-
-//Estados:
-//0 Sin verificar
-//1 Verificado
-//2 Reembolso
-
-?>
 
           <div class="contenedor1">
             <div class="table-responsive">
@@ -78,7 +72,7 @@ if(isset($aceptar)){
                             <?php
                             if($r['estado']==0){
                               ?>
-                                <a style="color:#3f88d4" href="./pagos.php?aceptar=<?php echo $r['id'];?>?id_compra=<?php echo $r['id_compra'];?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
+                                <a style="color:#3f88d4" href="./pagos.php?&aceptar=<?php echo $r['id'];?>?id_compra=<?php echo $r['id_compra'];?>"><img src="../iconos/verificar1.png" width="25" height="25" title="Verificar y aceptar pago" ></a>
                               <?php
                             }
                             ?>
@@ -146,3 +140,20 @@ if(isset($aceptar)){
 
 </body>
 </html>
+<style type="text/css">
+  .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
+.table th{
+  border: 1px solid #000;
+}
+.table td{
+  border: 1px solid #000 ;
+}
+</style>

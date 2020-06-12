@@ -23,9 +23,6 @@ include "../configs/funciones.php";
     }
   </script>
 </head>
-    <style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -115,8 +112,6 @@ if(isset($enviar)){
                     <ul class="list-unstyled">
                          <li><a href="../index.html">Inicio</a></li>
                         <li><a href="./productos.php">Productos</a></li>
-                        <li><a href="./carrito.php">Carrito</a></li>
-                        <li><a href="#">Mis Compras</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-4 align-center">
@@ -140,6 +135,15 @@ if(isset($enviar)){
 </body>
 </html>
 <style type="text/css">
+     .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
     .centrar_login{
         width: 40%;
         text-align: center;
@@ -148,7 +152,7 @@ if(isset($enviar)){
     }
 
 input[type="text"]{
-    border: none;
+   border: 1px solid black;
 
    border-radius: 6px;
 
@@ -171,7 +175,7 @@ input[type="text"]{
 
 input[type="password"] {
 
-   border: none;
+     border: 1px solid black;
 
    border-radius: 6px;
 
@@ -232,7 +236,7 @@ input[type="submit"]:hover {
 
  .btn{
    text-decoration: none;
-   background: #d60062!important;
+   background: #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -260,7 +264,7 @@ input[type="submit"]:hover {
 .titulo{
    margin-top: 110px;
    font-size: 40px;
-   font-family: sans-serif;
+   font-family: 'Optima';
    margin-left: auto;
    margin-right: auto;
    text-align: center;

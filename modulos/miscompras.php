@@ -14,9 +14,6 @@ include "../configs/funciones.php";
 
 	<title>Mis Compras</title>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -39,7 +36,7 @@ include "../configs/funciones.php";
             </div> 
         </div>
     </nav>
-   <br><br><br>
+   <br><br><br><br>
     <h1 class="titulo">Mis Compras</h1>
     <?php
         check_user('miscompras');
@@ -64,7 +61,7 @@ include "../configs/funciones.php";
                     <td><?=$divisa?><?=number_format($r['monto'])?> </td>
                     <td><?=estado($r['estado'])?></td>
                     <td>
-                        <a href="./vercompra.php&id=<?php echo $r['id']?>">
+                        <a href="./verCompra.php?id=<?php echo $r['id']?>">
                         <img src="../iconos/ver1.png" width="35" height="20" title="Ver compra" ></a>
 
                     <?php
@@ -90,7 +87,7 @@ include "../configs/funciones.php";
         }
     ?>
    
-
+<br><br><br>
     <footer class="footer">
         <div class="container">
             <div class="row">             
@@ -123,3 +120,19 @@ include "../configs/funciones.php";
 
 </body>
 </html>
+<style type="text/css">
+    .navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}.table th{
+  border: 1px solid #000;
+}
+.table td{
+  border: 1px solid #000 ;
+}
+</style>

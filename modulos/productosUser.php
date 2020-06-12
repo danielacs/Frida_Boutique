@@ -14,9 +14,6 @@ include "../configs/funciones.php";
 
 	<title>Productos</title>
 </head>
-	<style type="text/css">
-        body{background:#8AE691;}
-    </style>
 
 <body>
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -28,7 +25,7 @@ include "../configs/funciones.php";
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html"> Inicio</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="./productos.php"> Productos</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"> Productos</a></li>
                     <!--<li class="nav-item"><a class="nav-link" href="./carrito.php"> Carrito</a></li>
                     <li class="nav-item"><a class="nav-link" href="./miscompras.php"> Mis Compras</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="./adminlogin.php"> Administrador</a></li>
@@ -80,12 +77,13 @@ include "../configs/funciones.php";
 		}else{
 			$q = $conexion->query("SELECT * FROM productos ORDER BY id DESC");
 		}
-	?><br><br><br>
+	?><br>
 <h4>-Inicia Sesion para comprar-</h4>
+			<center><h1>PRODUCTOS</h1></center>
 	<form method="post" action="">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-				<h1 class="titulo" align="center">PRODUCTOS</h1>
+	
 					<style> h1{text-align: center;}</style>
 					<br>
 				<select id="categoria" name="cat" class="btn2">
@@ -168,7 +166,7 @@ while($r=mysqli_fetch_array($q)){
         <div class="container">
             <div class="row">             
                 <div class="col-4 offset-1 col-sm-2">
-                    <h5>Links</h5>
+                    <h5></h5>
                     <ul class="list-unstyled">
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="#">Productos</a></li>
@@ -197,14 +195,24 @@ while($r=mysqli_fetch_array($q)){
 </body>
 </html>
 <style type="text/css">
+	.navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+}
 	.card{
 		display:inline-table;
 		width:25%;
 		margin-left:65px;
 		margin-right: 0px;
-		border: 1px solid black;
+		border: 1px solid #8AE691!important;
 		font-family: sans-serif;
 		margin-bottom: 80px;
+		
 		
 
 }
@@ -228,45 +236,34 @@ while($r=mysqli_fetch_array($q)){
 		padding:20px;
 }
 h4{
-   font-size: 20px;
+   font-size: 17px;
    font-family: 'Optima';
    text-align: center;
 }
 h1{
-
-   margin-top: 50px;
-   font-size: 45px;
+   font-size: 50px;
    font-family: 'Optima';
-   margin-left: auto;
-   margin-right: auto;
    text-align: center;
 }
 .cat{
-   margin-top: -15px;
-   font-size: 35px;
+   margin-top: -50px;
+   font-size: 18px;
    font-family: 'Optima';
    margin-left: 0px;
 }
 .btn1{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 3px;
-
    color: white;
    display: block;
-
    margin-bottom: 15px;
    margin-left: 30px;
-
    margin-right: 30px;
-
-
    margin-top: 6px;
-  
    text-align: center;
-
    width: 100px;
 }
 
@@ -305,7 +302,7 @@ h1{
 	}
 .btn2{
    text-decoration: none;
-   background:  #d60062!important;
+   background:  #6bbf72!important;
    padding: 15px 10px;
    border: none;
    border-radius: 6px;
@@ -314,9 +311,9 @@ h1{
    display: block;
 
    margin-bottom: 15px;
-   margin-left: 50px;
+   margin-left: 30px;
 
-   margin-right: 40px;
+   margin-right: 30px;
 
 
    margin-top: 3px;

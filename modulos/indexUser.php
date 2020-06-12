@@ -9,10 +9,6 @@
     <title>Pasillo de Frida</title>
 </head>
 
-    <style type="text/css">
-        body{background:#8AE691;}
-    </style>
-
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
         <div class="container">
@@ -85,3 +81,18 @@
 
 </body>
 </html>
+<style type="text/css">
+    body{
+    background:#fff;
+    padding:50px 0px 0px 0px;
+  
+}
+.navbar-dark {
+     background-color: #000;
+}
+.footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+}
+</style>
