@@ -33,7 +33,7 @@ include "../configs/funciones.php";
             <a class="navbar-brand mr-auto" href="../index.html"><img src="../iconos/pasillo.jpg" height="100" width="100"></a>
             <div class="collapse navbar-collapse" id="Navbar">       
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item"><a class="nav-link" href="../index.html"> Salir </a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html"> Regresar </a></li>
                 </ul>       
             </div> 
         </div>
