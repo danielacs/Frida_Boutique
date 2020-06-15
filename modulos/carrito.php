@@ -66,7 +66,7 @@ if(isset($finalizar)){
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Productos</title>
+    <title>Carrito</title>
 </head>
 
 <body>
@@ -215,8 +215,8 @@ while($r = mysqli_fetch_array($q)){
                 </div>
                 <div class="col-12 col-sm-4 align-center">
                     <div class="text-center">
-                        <a href="http://www.facebook.com/profile.php?id="><img src="../iconos/ins.png" width=75 height=75></a>
-                        <a href="https://instagram.com/elpasillodefrida_boutique?igshid=1p9dkng0cq5bu"><img src="../iconos/face.png" width=80 height=80></a>
+                        <a href="http://www.facebook.com/profile.php?id="><img src="../iconos/fac.png" width=75 height=75></a>
+                        <a href="https://instagram.com/elpasillodefrida_boutique?igshid=1p9dkng0cq5bu"><img src="../iconos/insta.png" width=80 height=80></a>
                     </div>
                 </div>
            </div>
